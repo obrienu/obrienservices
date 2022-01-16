@@ -1,4 +1,4 @@
-package com.obrienservice.customer;
+package com.obrien.customer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

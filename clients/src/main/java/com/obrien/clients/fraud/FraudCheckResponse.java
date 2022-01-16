@@ -1,4 +1,4 @@
-package com.obrienservice.fraud;
+package com.obrien.clients.fraud;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 }

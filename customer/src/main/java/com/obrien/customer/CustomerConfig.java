@@ -1,4 +1,4 @@
-package com.obrienservice.customer;
+package com.obrien.customer;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

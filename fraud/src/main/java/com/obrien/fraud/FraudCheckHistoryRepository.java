@@ -1,4 +1,4 @@
-package com.obrienservice.fraud;
+package com.obrien.fraud;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

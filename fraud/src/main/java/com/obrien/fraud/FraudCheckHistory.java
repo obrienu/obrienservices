@@ -1,4 +1,4 @@
-package com.obrienservice.fraud;
+package com.obrien.fraud;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
