@@ -1,4 +1,4 @@
-package com.obrien;
+package com.obrien.notification;
 
 import com.obrien.clients.notification.NotificationDto;
 import com.obrien.clients.notification.NotificationResponse;

@@ -1,15 +1,17 @@
 package com.obrien.customer;
 
+import com.obrien.amqp.RabbitMQMessageProducer;
 import com.obrien.clients.fraud.FraudCheckResponse;
 import com.obrien.clients.fraud.FraudClient;
-import com.obrien.clients.notification.NotificationClient;
 import com.obrien.clients.notification.NotificationDto;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
-public record CustomerService(CustomerRepository customerRepository, FraudClient fraudClient, NotificationClient notificationClient) {
+public record CustomerService(CustomerRepository customerRepository,
+                              FraudClient fraudClient,
+                              RabbitMQMessageProducer rabbitMQMessageProducer) {
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
                 .firstName(customerRegistrationRequest.firstName())
@@ -31,7 +33,8 @@ public record CustomerService(CustomerRepository customerRepository, FraudClient
                 .sentAt(LocalDateTime.now())
                 .sender("Obrien")
                 .build();
-
-        notificationClient.sendNotification(notificationDto);
+        rabbitMQMessageProducer.publish(notificationDto,
+                "internal.exchange",
+                "internal.notification.routing-key");
     }
 }

@@ -1,4 +1,4 @@
-package com.obrien;
+package com.obrien.notification;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

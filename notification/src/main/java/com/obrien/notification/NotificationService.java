@@ -1,4 +1,4 @@
-package com.obrien;
+package com.obrien.notification;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.obrien.clients.notification.NotificationDto;
